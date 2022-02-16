@@ -13,11 +13,6 @@ class ActivityPage extends StatefulWidget {
 }
 
 class _ActivityPageState extends State<ActivityPage> {
-  _accessAnimationListPage() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const AnimationListPage()));
-  }
-
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -38,8 +33,9 @@ class _ActivityPageState extends State<ActivityPage> {
               activityCard(
                 imageIcon:
                     Image.asset("images/runner/Icon awesome-running.png"),
-                title: "Animalções",
+                title: "Animações",
                 activityCount: 4,
+                githubUrl: "https://github.com/CYH05/animations",
                 description:
                     "Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos",
                 navigateTo: const AnimationListPage(),
@@ -50,6 +46,7 @@ class _ActivityPageState extends State<ActivityPage> {
                     Image.asset("images/glasses/Icon awesome-glasses.png"),
                 title: "Leitura de mockup",
                 activityCount: 2,
+                githubUrl: "https://github.com/CYH05/front_copy",
                 description:
                     "Aplicação da técnica de leitura de mockup, contendo 2 exercícios",
                 navigateTo: const MockupListPage(),

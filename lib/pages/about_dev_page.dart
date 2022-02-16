@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miscelanea/const/colors.dart';
+import 'package:miscelanea/url_launcher/url_launcher.dart';
 import 'package:miscelanea/widgets/app_bar.dart';
 import 'package:miscelanea/widgets/about_dev/level_bar.dart';
 import 'package:miscelanea/widgets/technology_card/technology_card.dart';
@@ -71,12 +72,16 @@ class _AboutDevPageState extends State<AboutDevPage> {
                                 height: 22.48,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 27.34),
-                              child: SvgPicture.asset(
-                                "images/contacts/Icon awesome-github-alt.svg",
-                                width: 12.04,
-                                height: 22.48,
+                            GestureDetector(
+                              onTap: () =>
+                                  launchURL("https://github.com/CYH05"),
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 27.34),
+                                child: SvgPicture.asset(
+                                  "images/contacts/Icon awesome-github-alt.svg",
+                                  width: 12.04,
+                                  height: 22.48,
+                                ),
                               ),
                             ),
                             Padding(

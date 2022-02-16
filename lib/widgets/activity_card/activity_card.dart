@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miscelanea/const/colors.dart';
+import 'package:miscelanea/url_launcher/url_launcher.dart';
 import 'package:miscelanea/widgets/texts/body_text_text_style.dart';
 import 'package:miscelanea/widgets/texts/description_text_style.dart';
 import 'package:miscelanea/widgets/texts/headline_2_text_style.dart';
@@ -9,6 +10,7 @@ activityCard({
   required String title,
   required int activityCount,
   required String description,
+  required String githubUrl,
   required Widget navigateTo,
   required BuildContext context,
 }) {
@@ -76,10 +78,20 @@ activityCard({
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset("images/github/Icon awesome-github.png"),
-              Text(
-                "Acessar código fonte",
-                style: descriptionTextStyle(textHighlight),
+              Row(
+                children: [
+                  Image.asset("images/github/Icon awesome-github.png"),
+                  GestureDetector(
+                    onTap: () => launchURL(githubUrl),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 4),
+                      child: Text(
+                        "Acessar código fonte",
+                        style: descriptionTextStyle(textHighlight),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               GestureDetector(
                 onTap: () => Navigator.push(context,
