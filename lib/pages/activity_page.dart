@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:miscelanea/const/colors.dart';
-import 'package:miscelanea/pages/animations_list_page.dart';
-import 'package:miscelanea/pages/mockup_list_page.dart';
+import 'package:miscelanea/pages/activity_list/animations_list_page.dart';
+import 'package:miscelanea/pages/activity_list/generator_tin_list_page.dart';
+import 'package:miscelanea/pages/activity_list/mockup_list_page.dart';
 import 'package:miscelanea/widgets/activity_card/activity_card.dart';
 import 'package:miscelanea/widgets/app_bar.dart';
 
@@ -50,6 +51,17 @@ class _ActivityPageState extends State<ActivityPage> {
                 description:
                     "Aplicação da técnica de leitura de mockup, contendo 2 exercícios",
                 navigateTo: const MockupListPage(),
+                context: context,
+              ),
+              activityCard(
+                imageIcon:
+                    Image.asset("images/glasses/Icon awesome-glasses.png"),
+                title: "Gerador randomico de CPF",
+                activityCount: 1,
+                githubUrl: "https://github.com/CYH05/random_tin_generator",
+                description:
+                    "Aplicação do conceito MVC que já esta depreciado dentro do flutter, entretanto continua sendo uma ótima metodologia de estudo.",
+                navigateTo: const GenerateTinListPage(),
                 context: context,
               ),
             ],
